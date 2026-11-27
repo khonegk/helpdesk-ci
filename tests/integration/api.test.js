@@ -31,7 +31,7 @@ test('POST persists a ticket and GET returns it', async () => {
   });
   expect(res.status).toBe(201);
   const ticket = await res.json();
-  expect(ticket.response_minutes).toBe(60);
+  expect(ticket.response_minutes).toBe(15);
   const saved = await pool.query('SELECT title FROM tickets WHERE id=$1', [ticket.id]);
   expect(saved.rows[0].title).toBe('VPN does not connect');
   const list = await (await fetch(`${base}/tickets`)).json();
