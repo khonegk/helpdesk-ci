@@ -1,6 +1,6 @@
 const { responseMinutes } = require('../../src/sla');
 
-test.each([['low', 480], ['medium', 240], ['high', 60]])(
+test.each([['low', 480], ['medium', 240], ['high', 15]])(
   '%s priority has %i minutes', (priority, expected) => {
     expect(responseMinutes(priority)).toBe(expected);
   }
